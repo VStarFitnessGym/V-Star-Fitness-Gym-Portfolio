@@ -1,0 +1,49 @@
+{
+  "name": "fitfusion-gym-management",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "typecheck:server": "tsc -p tsconfig.server.json --noEmit",
+    "test:db": "node tests/db/test_pglite_suite.mjs && tsx tests/db/postgres_adapter_test.ts",
+    "test:api": "tsx tests/api/api_test_suite.ts",
+    "test:frontend": "tsx tests/frontend/api_client_test.ts",
+    "test:reminder": "tsx tests/reminder/reminder_engine_test.ts",
+    "test:provider": "tsx tests/reminder/provider_integration_test.ts",
+    "test:postgres:real": "tsx tests/db/test_real_postgres_integration.ts",
+    "test": "npm run test:db && npm run test:api && npm run test:frontend && npm run test:reminder && npm run test:provider"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "@types/pg": "^8.23.1",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "lucide-react": "^0.460.0",
+    "pg": "^8.23.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.4",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/supertest": "^7.2.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "supertest": "^7.3.1",
+    "tailwindcss": "^3.4.15",
+    "tsx": "^4.23.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}
